@@ -1,0 +1,45 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db_java1234_mall_v3?serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto #id生成规则：数据库id自增
+  configuration:
+    map-underscore-to-camel-case: false  # 开启驼峰功能
+    auto-mapping-behavior: full # 自动映射任何复杂的结果
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+weixin:
+  jscode2sessionUrl: https://api.weixin.qq.com/sns/jscode2session
+  appid: wxc1a0a6619eb07084
+  secret: 41d8dd0e44d9ad260c773ab188b25e8c
+
+#微信支付配置
+# appid
+# mch_id 商户号
+# key 商户的key【API密匙】
+# url api请求地址
+# notify_url 服务器异步通知页面路径
+weixinpayconfig:
+   appid: wxc1a0a6619eb07084
+   mch_id: 换成你的
+   key: jrBXpy1VPNY0FCFI42EBShLom7KMaRBa 换成你的
+   url: https://api.mch.weixin.qq.com/pay/unifiedorder
+   notify_url: https://2c23-222-184-165-54.ngrok.io/weixinpay/notifyUrl
+
+bigTypeImagesFilePath: E://01-黑马前端/04_java1234/01_微信小程序电商实战课程SpringBoot2+Vue3+Element plus/bigTypeImgs/
+productImagesFilePath: E://01-黑马前端/04_java1234/01_微信小程序电商实战课程SpringBoot2+Vue3+Element plus/productImgs/
+swiperImagesFilePath: E://01-黑马前端/04_java1234/01_微信小程序电商实战课程SpringBoot2+Vue3+Element plus/swiperImgs/
+productSwiperImagesFilePath: E://01-黑马前端/04_java1234/01_微信小程序电商实战课程SpringBoot2+Vue3+Element plus/productSwiperImgs/
